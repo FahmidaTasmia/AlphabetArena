@@ -13,17 +13,17 @@
 <body class="font-poppins">
     <!--home screen start-->
     <main class=" min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
-        <section class="home hidden min-h-screen text-white flex flex-col justify-center items-center gap-8">
+        <section id="home-screen" class="min-h-screen text-white flex flex-col justify-center items-center gap-8">
             <h1 class="text-8xl uppercase font-extrabold font-anton tracking-widest   ">Alphabet Arena</h1>
            <div class="flex flex-col items-center gap-8">
             <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-            <button class="btn bg-white text-black">play Now</button>
+            <button onclick="play()" class="btn bg-white text-black">play Now</button>
            </div>
         </section>
          <!--home screen end-->
          
         <!--playground start-->
-        <section class="play-ground hidden">
+        <section id="play-ground" class=" hidden">
             <div class="flex flex-col items-center gap-20 pt-20">
                 <!-- screen -->
                 <div class="artboard artboard-horizontal phone-6 border-8 rounded-2xl border-[#010313CC] bg-[#FFFFFFB3]">
@@ -97,7 +97,7 @@
         <!--playground end-->
 
           <!--final score start-->
-          <section class="score flex justify-center items-center min-h-screen ">
+          <section class="score flex justify-center items-center min-h-screen hidden ">
             <div class="text-white text-center space-y-6 bg-[#FFFFFF33] p-4 rounded-lg">
                 <h1 class="text-8xl">
                     <span class="font-extrabold">Score:</span>
@@ -110,5 +110,7 @@
        <!--final score end-->
 
     </main>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/utility.js"></script>
 </body>
 </html>
