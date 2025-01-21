@@ -5,13 +5,17 @@ function handleKeyboardButtonPress(event){
   const expectedAlphabet = currentAlphabet.toLowerCase();
   //check right key or wrong
   if(playerPressed===expectedAlphabet){
-    console.log('you got a point');
-    
+    const currentScore = getTextElementValueById('current-score');
+    const updatedScore = currentScore + 1;
+    setTextElementValueById('current-score', updatedScore);
     removeBackgroundColorById(expectedAlphabet);
     continueGame();
   }
   else{
-    console.log('oops! you loss')
+    const currentLifeScore = getTextElementValueById('current-life');
+    const updatedLifeScore = currentLifeScore - 1;
+    setTextElementValueById('current-life', updatedLifeScore)
+
   }
 }
 
