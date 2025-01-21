@@ -4,42 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlphabetArena</title>
-    <!--daisy ui and Tailwind-->
+    <!-- daisyUI and Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!--custom css-->
+    <!-- custom CSS -->
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body class="font-poppins">
-    <!--home screen start-->
-    <main class=" min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
-        <section id="home-screen" class="min-h-screen text-white flex flex-col justify-center items-center gap-8">
-            <h1 class="text-8xl uppercase font-extrabold font-anton tracking-widest   ">Alphabet Arena</h1>
-           <div class="flex flex-col items-center gap-8">
-            <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-            <button onclick="play()" class="btn bg-white text-black">play Now</button>
-           </div>
+    <!-- Main Content -->
+    <main class="min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
+        <!-- Home Screen -->
+        <section id="home-screen" class="min-h-screen text-white flex flex-col justify-center items-center gap-8 px-4">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl uppercase font-extrabold font-anton tracking-widest">
+                Alphabet Arena
+            </h1>
+            <div class="flex flex-col items-center gap-4 sm:gap-8">
+                <p class="text-xs sm:text-sm md:text-base">
+                    Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+                </p>
+                <button onclick="play()" class="btn bg-white text-black px-4 py-2 sm:px-6 sm:py-3 hover:bg-gray-200">
+                    Play Now
+                </button>
+            </div>
         </section>
-         <!--home screen end-->
-         
-        <!--playground start-->
-        <section id="play-ground" class=" hidden">
-            <div class="flex flex-col items-center gap-20 pt-20">
-                <!-- screen -->
-                <div class="artboard artboard-horizontal phone-6 border-8 rounded-2xl border-[#010313CC] bg-[#FFFFFFB3]">
-                   
-
-                    <div class="flex justify-center ">
-                        <p class="text-white bg-[#2F2941] pb-4 px-6 rounded-b-xl">Don't watch keyboard  while playing...</p>
+        
+        <!-- Playground -->
+        <section id="play-ground" class="hidden px-4">
+            <div class="flex flex-col items-center gap-10 pt-10 sm:gap-20 sm:pt-20">
+                <!--  Art board -->
+                <div class="artboard artboard-horizontal phone-6 border-8 rounded-2xl border-[#010313CC] bg-[#FFFFFFB3] w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl aspect-[4/3]">
+                    <div class="flex justify-center">
+                        <p class="text-white bg-[#2F2941] pb-2 px-4 sm:pb-4 sm:px-6 rounded-b-xl text-sm sm:text-base">
+                            Don't watch the keyboard while playing...
+                        </p>
                     </div>
-
-                    <div  class="flex justify-center items-center h-full">
-                        <p id="current-alphabet" class="text-black text-8xl font-extrabold">Y</p>
+                    <div class="flex justify-center items-center h-full">
+                        <p id="current-alphabet" class="text-black text-6xl sm:text-8xl font-extrabold">Y</p>
                     </div>
                 </div>
-                <!-- keyboard -->
-                 <div>
-                    <div class="flex justify-center gap-1 my-1 w-full">
+        
+                <!-- Keyboard -->
+                <div class="space-y-2">
+                    <!-- Row 1 -->
+                    <div class="flex justify-center gap-2">
                         <kbd id="q" class="kbd">q</kbd>
                         <kbd id="w" class="kbd">w</kbd>
                         <kbd id="e" class="kbd">e</kbd>
@@ -51,7 +58,8 @@
                         <kbd id="o" class="kbd">o</kbd>
                         <kbd id="p" class="kbd">p</kbd>
                     </div>
-                    <div class="flex justify-center gap-1 my-1 w-full">
+                    <!-- Row 2 -->
+                    <div class="flex justify-center gap-2">
                         <kbd id="a" class="kbd">a</kbd>
                         <kbd id="s" class="kbd">s</kbd>
                         <kbd id="d" class="kbd">d</kbd>
@@ -62,7 +70,8 @@
                         <kbd id="k" class="kbd">k</kbd>
                         <kbd id="l" class="kbd">l</kbd>
                     </div>
-                    <div class="flex justify-center gap-1 my-1 w-full">
+                    <!-- Row 3 -->
+                    <div class="flex justify-center gap-2">
                         <kbd id="z" class="kbd">z</kbd>
                         <kbd id="x" class="kbd">x</kbd>
                         <kbd id="c" class="kbd">c</kbd>
@@ -70,46 +79,38 @@
                         <kbd id="b" class="kbd">b</kbd>
                         <kbd id="n" class="kbd">n</kbd>
                         <kbd id="m" class="kbd">m</kbd>
-                        <kbd id="/" class="kbd">/</kbd>
                     </div>
-                 </div>
-                 <!-- keyboard end-->
-                <!-- life score start-->
-                <div class="flex justify-between w-3/4">
-                    <button class="btn rounded-full px-4 bg-[#894189] text-white border-0  text-sm">
-                        Life
-                        <img  src="images/heart.svg" alt="">
-                        <span id="current-life">5</span>
-                      </button>
-                      <!-- score button-->
-                      <button class="btn rounded-full px-4 bg-[#894189] text-white border-0 text-sm">
-                        Score
-                        <img src="images/doller.svg" alt="">
-                        <span id="current-score">0</span>
-                      </button>
-                    
                 </div>
-
-                <!-- life score end-->
-
+        
+                <!-- Life and Score -->
+                <div class="flex justify-between w-3/4">
+                    <button class="btn rounded-full px-4 bg-[#894189] text-white border-0 text-sm hover:bg-indigo-800">
+                        Life <img src="images/heart.svg" alt="" class="inline-block w-4 sm:w-6">
+                        <span id="current-life">5</span>
+                    </button>
+                    <button class="btn rounded-full px-4 bg-[#894189] text-white border-0 text-sm hover:bg-indigo-800">
+                        Score <img src="images/doller.svg" alt="" class="inline-block w-4 sm:w-6">
+                        <span id="current-score">0</span>
+                    </button>
+                </div>
             </div>
         </section>
-        <!--playground end-->
+        
+        
 
-          <!--final score start-->
-          <section id="final-score" class="flex justify-center items-center min-h-screen  hidden ">
-            <div class="text-white text-center space-y-6 bg-[#FFFFFF33] p-4 rounded-lg">
-                <h1 class="text-8xl">
-                    <h3 class="text-3xl">Game Over!</h3>
-                    <span class="font-extrabold">Score:</span>
-                    <span id="last-score">14</span>
+        <!-- Final Score -->
+        <section id="final-score" class="hidden flex justify-center items-center min-h-screen px-4">
+            <div class="text-white text-center space-y-4 sm:space-y-6 bg-[#FFFFFF33] p-4 rounded-lg">
+                <h3 class="text-xl sm:text-3xl">Game is Over!</h3>
+                <h1 class="text-4xl sm:text-6xl md:text-8xl">
+                    <span class="font-extrabold">Score:</span> <span id="last-score">14</span>
                 </h1>
-                <button onclick="play()" class="btn">Play Again</button>
-                <p>Practice will make you a Pro</p>
+                <button onclick="play()" class="btn px-4 py-2 sm:px-6 sm:py-3">
+                    Play Again
+                </button>
+                <p class="text-sm sm:text-base">Practice will make you a Pro !</p>
             </div>
-        </section>  
-       <!--final score end-->
-
+        </section>
     </main>
     <script src="scripts/script.js"></script>
     <script src="scripts/utility.js"></script>
